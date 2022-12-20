@@ -9,11 +9,11 @@ txtGorevAdi.addEventListener("keypress", function (event) {
         document.getElementById("btnEkle").click();
     }
 });
-let gorevListesi = []
-if (localStorage.getItem("gorevListesi") != null) {
-    gorevListesi = JSON.parse(localStorage.getItem("gorevListesi"));
-}
-gorevleriGetir();
+let gorevListesi = [{ "id": 1, "görevAdi": "Görev 1", "durum": "Aktif" }]
+// if (localStorage.getItem("gorevListesi") != null) {
+//     gorevListesi = JSON.parse(localStorage.getItem("gorevListesi"));
+// }
+// gorevleriGetir();
 function gorevEkle() {
     if (btnEkle.innerText == "Güncelle") {
         gorevListesi.find(x => x.id == guncellenecekId).gorevAdi = txtGorevAdi.value;
