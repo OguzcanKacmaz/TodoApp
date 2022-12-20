@@ -108,5 +108,3 @@ function gorevleriGetir() {
         }
     }
 }
-
-console.log(txtGorevAdi.value);
