@@ -97,8 +97,8 @@ function gorevleriGetir() {
                 <i class="fa-solid fa-ellipsis"></i>
             </button>
             <ul class="dropdown-menu">
-                <li><a onclick="gorevSil(${gorev.id})" class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Sil</a></li>
-                <li><a onclick="gorevGuncelle(${gorev.id},'${gorev.gorevAdi}')" class="dropdown-item" href="#"><i class="fa-solid fa-pen"></i> Güncelle</a>
+                <li><button onclick="gorevSil(${gorev.id})" class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Sil</button></li>
+                <li><button onclick="gorevGuncelle(${gorev.id},'${gorev.gorevAdi}')" class="dropdown-item" href="#"><i class="fa-solid fa-pen"></i> Güncelle</button>
                 </li>
             </ul>
         </div>
