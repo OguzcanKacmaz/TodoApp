@@ -9,16 +9,16 @@ txtGorevAdi.addEventListener("keypress", function (event) {
         document.getElementById("btnEkle").click();
     }
 });
-let gorevListesi = [{ "id": 1, "görevAdi": "Görev 1", "durum": "Aktif" }]
-// if (localStorage.getItem("gorevListesi") != null) {
-//     gorevListesi = JSON.parse(localStorage.getItem("gorevListesi"));
-// }
-// gorevleriGetir();
+let gorevListesi = [{ "id": 1, "görevAdi": "Görev 1", "durum": "Aktif" }];
+if (localStorage.getItem("gorevListesi") != null) {
+    gorevListesi = JSON.parse(localStorage.getItem("gorevListesi"));
+}
+gorevleriGetir();
 function gorevEkle() {
-    if (btnEkle.innerText == "Güncelle") {
+    if (btnEkle.innerHTML == '<i class="fa-solid fa-pen-to-square"></i>') {
         gorevListesi.find(x => x.id == guncellenecekId).gorevAdi = txtGorevAdi.value;
         txtGorevAdi.value = "";
-        btnEkle.innerText = "Ekle";
+        btnEkle.innerHTML = '<i class="fa-solid fa-plus fa-lg"></i>';
         btnEkle.classList.remove("btn-primary");
         btnEkle.classList.add("btn-warning");
         gorevleriGetir();
@@ -51,7 +51,7 @@ function gorevSil(id) {
 }
 function gorevGuncelle(id, gorevAdi) {
     txtGorevAdi.value = gorevAdi;
-    btnEkle.innerText = "Güncelle";
+    btnEkle.innerHTML = '<i class="fa-solid fa-pen-to-square"></i>';
     btnEkle.classList.remove("btn-warning");
     btnEkle.classList.add("btn-primary");
     guncellenecekId = id;
@@ -80,7 +80,7 @@ function durumGuncelle(durumCheck) {
 function gorevleriGetir() {
 
     if (gorevListesi.length == 0) {
-        ul.innerHTML = "<p class='p-3 m-0'>Görev Listesi Boş</p>"
+        ul.innerHTML = "<p class='p-3 m-0'>Görev Listesi Boş</p>";
     }
     else {
         ul.innerHTML = "";
@@ -97,8 +97,8 @@ function gorevleriGetir() {
                 <i class="fa-solid fa-ellipsis"></i>
             </button>
             <ul class="dropdown-menu">
-                <li><a onclick="gorevSil(${gorev.id})" class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Sil</a></li>
-                <li><a onclick="gorevGuncelle(${gorev.id},'${gorev.gorevAdi}')" class="dropdown-item" href="#"><i class="fa-solid fa-pen"></i> Güncelle</a>
+                <li><button onclick="gorevSil(${gorev.id})" class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Sil</button></li>
+                <li><button onclick="gorevGuncelle(${gorev.id},'${gorev.gorevAdi}')" class="dropdown-item" href="#"><i class="fa-solid fa-pen"></i> Güncelle</button>
                 </li>
             </ul>
         </div>

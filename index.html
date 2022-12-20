@@ -18,25 +18,22 @@
 </head>
 
 <body>
-    <div class="container-sm d-flex justify-content-center align-items-center shadow mt-5">
-
-        <div class="container-sm w-50 m-5">
-            <div class="card shadow">
-                <div class="card-header text-center">
-                    <h1>Todo App</h1>
+    <div class="container-sm d-flex justify-content-center align-items-center mt-5 p-5">
+        <div class="card shadow">
+            <div class="card-header text-center">
+                <h1>Todo App</h1>
+                <hr>
+                <div class="d-flex justify-content-between flex-wrap">
+                    <input id="gorevAdi" type="text" placeholder="Görev Adi" class="me-3"></input>
+                    <button id="btnEkle" class="btn btn-warning btn-sm ms-auto mt-1"><i
+                            class="fa-solid fa-plus fa-lg"></i></button>
+                    <button id="btnTemizle" class="btn btn-danger btn-sm ms-1 mt-1"><i
+                            class="fa-solid fa-broom"></i></button>
                 </div>
-                <div class="row px-5 pt-4">
-                    <input id="gorevAdi" type="text" class="col-9" placeholder="Görev Adi"></input>
-                    <div class="col-3 d-flex align-items-center">
-                        <button id="btnEkle" class="btn btn-warning btn-sm m-1">Ekle</button>
-                        <button id="btnTemizle" class="btn btn-danger btn-sm m-1">Temizle</button>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <ul class="list-group" id="gorevList">
-
-                    </ul>
-                </div>
+            </div>
+            <div class="card-body">
+                <ul class="list-group" id="gorevList">
+                </ul>
             </div>
         </div>
     </div>
